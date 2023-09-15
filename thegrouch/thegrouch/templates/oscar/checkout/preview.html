@@ -1,0 +1,55 @@
+<!-- Copyright 2023 Courtney Pattison
+Copyright 2020 Steve Bradshaw
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+
+{% extends "oscar/checkout/checkout.html" %}
+{% load i18n %}
+{% load currency_filters %}
+
+{% block title %}
+    {% trans "Order preview" %} | {{ block.super }}
+{% endblock %}
+
+{% block checkout_nav %}
+    {% include 'oscar/checkout/nav.html' with step=4 %}
+{% endblock %}
+
+{% block checkout_title %}
+    {% trans "Preview order" %}
+{% endblock %}
+
+{% block payment_method %}
+<div class="span6">
+	<div class="sub-header">
+		<h2>Payment</h2>
+	</div>
+	<div class="well well-success">
+		<p>{{ order_total.incl_tax|currency }} will be will be deducted from your Stripe account.</p>
+		<div class="alert-actions">
+			<a href="{% url 'checkout:payment-details' %}">Change payment details</a>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block place_order %}
+    <form method="post" action="{% url 'checkout:preview' %}" id="place_order_form">
+        {% csrf_token %}
+        <div style="display:none">
+			<input type="hidden" name="action" value="place_order" />
+		</div>
+
+        <div class="form-group clearfix">
+            <div class="row">
+                <div class="col-sm-3 offset-sm-9">
+                     <button id='place-order' type="submit" class="btn btn-primary btn-lg btn-block" data-loading-text="{% trans 'Submitting...' %}">{% trans "Place order" %}</button>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock place_order %}

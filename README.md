@@ -1,5 +1,8 @@
 # TheGrouch
 
+## Example
+![example](thegrouch.gif)
+
 ## Install and run
 ```
 $ cd thegrouch

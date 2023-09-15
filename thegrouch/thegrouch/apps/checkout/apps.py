@@ -8,7 +8,7 @@ class CheckoutConfig(StripeCheckoutConfig):
 
     def ready(self):
         super().ready()
-        from .views import CancelView, stripe_webhook
+        from .views import CancelView
         from oscar.apps.checkout.views import ThankYouView
         self.cancel_view = CancelView
         self.thank_you_view = ThankYouView

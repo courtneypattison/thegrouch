@@ -6,7 +6,7 @@
 
 ## Install and run
 
-First you need to create ![Stripe API keys](https://stripe.com/docs/keys) and then add them to a .env file or your PATH. See `settings.py` for which keys need to be created.
+First you need to create [Stripe API keys](https://stripe.com/docs/keys) and then add them to a .env file or your PATH. See `settings.py` for which keys need to be created.
 
 ```
 $ cd thegrouch

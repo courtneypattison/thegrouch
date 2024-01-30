@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 location = lambda x: os.path.join(
     os.path.dirname(os.path.realpath(__file__)), x)
 
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = '34wk1J2mNJ0yRezUbxOE8vyxlLpzv6C9'
 
 DEBUG = True
 
@@ -203,10 +203,10 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STRIPE_SECRET_KEY = os.environ['STRIPE_SECRET_KEY']
+STRIPE_SECRET_KEY = os.environ['STRIPE_SECRET_KEY'] # Need to create (https://stripe.com/docs/keys) then add to .env or PATH
 STRIPE_PUBLISHABLE_KEY = 'pk_test_51NkVkzHxsP8yR1ULIEt7i6Mhit17R1xgeekELp3NYZ8ChJQMV3kDWBaBhIEEfMAzw2a3Dkrn5HpyGXpB8Idr1NrT00Kd5SCIOu',
 STRIPE_CURRENCY = "GBP"
-STRIPE_ENDPOINT_SECRET = os.environ['STRIPE_ENDPOINT_SECRET']
+STRIPE_ENDPOINT_SECRET = os.environ['STRIPE_ENDPOINT_SECRET'] # Need to create (https://stripe.com/docs/keys) then add to .env or PATH
 
 SITE_URL = 'http://127.0.0.1:8000'
 

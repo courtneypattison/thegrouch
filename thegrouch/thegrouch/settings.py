@@ -203,10 +203,10 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STRIPE_SECRET_KEY = os.environ['STRIPE_SECRET_KEY'] # Need to create (https://stripe.com/docs/keys) then add to .env or PATH
+STRIPE_SECRET_KEY = os.environ['STRIPE_SECRET_KEY'] # Need to create (https://stripe.com/docs/keys) then add to .env
 STRIPE_PUBLISHABLE_KEY = 'pk_test_51NkVkzHxsP8yR1ULIEt7i6Mhit17R1xgeekELp3NYZ8ChJQMV3kDWBaBhIEEfMAzw2a3Dkrn5HpyGXpB8Idr1NrT00Kd5SCIOu',
 STRIPE_CURRENCY = "GBP"
-STRIPE_ENDPOINT_SECRET = os.environ['STRIPE_ENDPOINT_SECRET'] # Need to create (https://stripe.com/docs/keys) then add to .env or PATH
+STRIPE_ENDPOINT_SECRET = os.environ['STRIPE_ENDPOINT_SECRET'] # Need to create (https://stripe.com/docs/keys) then add to .env
 
 SITE_URL = 'http://127.0.0.1:8000'
 
